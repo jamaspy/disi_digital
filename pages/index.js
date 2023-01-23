@@ -1,73 +1,58 @@
-import Head from "next/head";
 import Image from "next/image";
+
 import React from "react";
-import { Bs, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { FaRegWindowClose } from "react-icons/fa";
-import { Button, Modal } from "../components";
-import clouds from "../public/cloud.jpg";
-import me from "../public/me.jpeg";
+import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+
+import Boxes from "../components/Boxes/";
+import Form from "../components/Form";
+import Header from "../components/Head";
+import Hero from "../components/Hero";
+import Tabs from "../components/Tabs";
+
+import { description } from "../content/description";
+
+import squareDoodle from "../public/square.jpg";
+
 export default function Home() {
-  const [show, setShow] = React.useState(false);
-
   return (
-    <div className="">
-      <Head>
-        <title>disi digital</title>
-        <meta
-          name="description"
-          content="disi digital - web development for the Northern Beaches NSW"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="">
-        {/* HERO */}
-        <div className="min-h-screen flex flex-col items-center justify-center relative">
-          <Image
-            alt="clouds"
-            src={clouds}
-            placeholder="blur"
-            className="absolute top-0 left-0 w-full h-full object-cover"
-          />
-          <div className="z-10 text-slate-900">
-            <h1 className="text-8xl ">disi</h1>
-            <p>develop | deploy | host</p>
-          </div>
+    <div>
+      <Header title="disi" description="ai powered design" />
+      <div className="flex flex-col-reverse lg:flex-row">
+        <div className="bg-[#165DC7] lg:w-1/4 w-full p-4 flex lg:flex-col md:flex-row flex-col md:gap-4">
+          <Boxes />
         </div>
-        {/* HERO END*/}
-        {/* INTRO */}
-        <div className="flex flex-col md:flex-row relative w-full">
-          {show && <Modal setShow={setShow} />}
-          <div className="flex-1 bg-black text-white p-4">
-            <div className="h-full flex flex-col items-start justify-center">
-              <p className="font-bold">Welcome to disi digital</p>
-              <p className="mt-4">
-                My name is James, I am a Senior Web Developer with experience
-                creating web applications, websites and subscriptions based
-                content streaming services.
-              </p>
-              <p className="mt-4">
-                I am based in beautiful Avalon on the Northern beaches and
-                alongside my day job I worked with small to medium business to
-                design, develop and deploy optimised, performant and cutting
-                edge platforms.
-              </p>
-              <p className="mt-4 mb-8">
-                If you have an idea for something new, or you are looking for
-                help with something existing please, get in touch for a chat.
-              </p>
-              <Button onClick={() => setShow(!show)}>Contact me</Button>
-            </div>
-          </div>
-          <div className="flex-1 flex items-center justify-center bg-white">
-            <Image alt="clouds" src={me} placeholder="blur" />
-          </div>
+        <div className="lg:w-3/4 w-full">
+          <Hero />
         </div>
-        {/* INTRO END */}
       </div>
+      <div className="flex flex-row">
+        <div className="flex-1 bg-[#165DC7] p-8 text-[#F7F5CF] flex flex-col items-center justify-center">
+          {description.map((item) => (
+            <p key={item.id} className="mb-8">
+              {item.title}
+            </p>
+          ))}
+        </div>
 
-      <footer className="bg-black text-white flex flex-col items-center justify-center p-4 text-xs">
-        <div className="flex flex-row items-center justify-center mb-2">
+        <div className=" bg-[#165DC7] p-12 hidden md:flex md:items-center md:justify-center md:flex-1 ">
+          <div className="w-full">
+            <Image src={squareDoodle} className="rounded-3xl" />
+          </div>
+        </div>
+      </div>
+      <Tabs />
+      <div className="flex flex-col lg:flex-row bg-[#165DC7]">
+        <div className="flex-1 p-8">
+          <Form />
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center p-4 mb-4 md:mb-0">
+          <p className="text-3xl italic text-[#F8F2CF] max-w-md">
+            &ldquo;Design adds value faster than it adds costs.&rdquo;
+          </p>
+        </div>
+      </div>
+      <footer className="bg-[#165DC7]  text-[#F8F2CF] flex flex-col items-center justify-center p-4 text-xs">
+        <div className="flex flex-row items-center justify-center my-2">
           <a
             href="https://www.instagram.com/desi_web_things/"
             className="hover:text-pink-600"
