@@ -1,11 +1,10 @@
-import { Cormorant_Garamond } from "@next/font/google";
+import { Space_Grotesk } from "@next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "../styles/globals.css";
-const space = Cormorant_Garamond({
+const space = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
-  weight: ["300", "400", "700"],
 });
 function MyApp({ Component, pageProps }) {
   return (

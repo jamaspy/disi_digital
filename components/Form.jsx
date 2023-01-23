@@ -1,9 +1,8 @@
 import React from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { FaRegWindowClose } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { Button } from "./";
-function Modal({ setShow }) {
+import Button from "./Button";
+const Form = () => {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [name, setName] = React.useState("");
@@ -58,6 +57,7 @@ function Modal({ setShow }) {
       });
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -82,7 +82,6 @@ function Modal({ setShow }) {
       setMessage("");
       setName("");
       showToaster("success");
-      setShow(false);
     } else {
       showToaster("error");
       setEmailSent(false);
@@ -111,60 +110,53 @@ function Modal({ setShow }) {
       return false;
     }
   };
-
   return (
-    <div className="absolute p-8 inset-0 my-4 bg-slate-400 rounded-md flex flex-col items-start justify-center mx-2 h-full">
-      <FaRegWindowClose
-        className="text-2xl self-end hover:text-white cursor-pointer"
-        onClick={() => setShow(false)}
-      />
-      <form className="flex flex-col w-full">
-        <div className="flex flex-col w-full">
-          <label htmlFor="name" className="font-medium">
-            Your Name
-          </label>
-          <input
-            className="rounded-md p-2"
-            type="text"
-            name="name"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col w-full mt-4">
-          <label htmlFor="email" className="font-medium">
-            Your Email Adress
-          </label>
-          <input
-            className="rounded-md p-2"
-            type="email"
-            name="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col w-full my-4">
-          <label htmlFor="message" className="font-medium">
-            Your Message
-          </label>
-          <textarea
-            className="rounded-md p-2"
-            rows={5}
-            type="text"
-            name="message"
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </div>
-        <Button disabled={isDisabled()} onClick={handleSubmit}>
-          {renderButtonText()}
-        </Button>
-      </form>
-    </div>
+    <form className="flex flex-col w-full">
+      <div className="flex flex-col w-full">
+        <label htmlFor="name" className="font-medium text-[#F7F5CF] ">
+          Your Name
+        </label>
+        <input
+          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          type="text"
+          name="name"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="flex flex-col w-full mt-4">
+        <label htmlFor="email" className="font-medium text-[#F7F5CF] ">
+          Your Email Address
+        </label>
+        <input
+          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          type="email"
+          name="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="flex flex-col w-full mt-4 mb-8">
+        <label htmlFor="message" className="font-medium text-[#F7F5CF]">
+          Your Message
+        </label>
+        <textarea
+          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          rows={5}
+          type="text"
+          name="message"
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+      <Button disabled={isDisabled()} onClick={handleSubmit}>
+        {renderButtonText()}
+      </Button>
+    </form>
   );
-}
+};
 
-export default Modal;
+export default Form;
