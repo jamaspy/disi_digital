@@ -11,7 +11,10 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-space)", ...fontFamily.sans],
       },
+      colors: {
+        primary: "#C1D3CA",
+      },
     },
+    plugins: [],
   },
-  plugins: [],
 };
