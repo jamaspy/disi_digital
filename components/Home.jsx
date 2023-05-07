@@ -7,6 +7,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row justify-around max-w-4xl gap-12 mx-auto">
           <div class="group relative max-w-md">
             <img src="/tile1.png" alt="dev logo" />
+
             <div class="absolute p-4 text-center top-0 left-0 w-full lg:h-0 flex flex-col justify-center items-center bg-zinc-800 opacity-75 h-full lg:opacity-0 xl:group-hover:h-full lg:group-hover:opacity-75 duration-500">
               <p className="text-lg italic mb-2">AI Drive Design</p>
               <p className="text-sm font-light">

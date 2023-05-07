@@ -25,7 +25,7 @@ const Tabs = () => {
     setIsOpen(true);
   }
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-[#165DC7] text-[#F7F5CF]">
+    <div className="w-full flex md:py-20 pt-40 flex-col items-center justify-center bg-[#245E67] text-slate-700">
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -88,10 +88,10 @@ const Tabs = () => {
           <Tab className="p-4 focus:outline-none">
             {({ selected }) => (
               <p
-                className={`text-xl ${
+                className={`text-xl hover:text-slate-400 ${
                   selected
-                    ? "text-zinc-200 font-semibold underline"
-                    : "text-[#F7F5CF]"
+                    ? "text-zinc-300 font-semibold underline"
+                    : "text-zinc-300"
                 }`}
               >
                 logos
@@ -101,10 +101,10 @@ const Tabs = () => {
           <Tab className="p-4 focus:outline-none">
             {({ selected }) => (
               <p
-                className={`text-xl ${
+                className={`text-xl hover:text-slate-400 ${
                   selected
-                    ? "text-zinc-200 font-semibold underline"
-                    : "text-[#F7F5CF]"
+                    ? "text-zinc-300 font-semibold underline"
+                    : "text-zinc-300"
                 }`}
               >
                 web
@@ -114,10 +114,10 @@ const Tabs = () => {
           <Tab className="p-4 focus:outline-none">
             {({ selected }) => (
               <p
-                className={`text-xl ${
+                className={`text-xl hover:text-slate-400 ${
                   selected
-                    ? "text-zinc-200 font-semibold underline"
-                    : "text-[#F7F5CF]"
+                    ? "text-zinc-300 font-semibold underline"
+                    : "text-zinc-300"
                 }`}
               >
                 art

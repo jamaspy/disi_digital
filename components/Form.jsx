@@ -113,11 +113,11 @@ const Form = () => {
   return (
     <form className="flex flex-col w-full">
       <div className="flex flex-col w-full">
-        <label htmlFor="name" className="font-medium text-[#F7F5CF] ">
+        <label htmlFor="name" className="font-medium text-slate-800 ">
           Your Name
         </label>
         <input
-          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          className="rounded-md p-2 font-sans bg-primary text-slate-800 border border-slate-700"
           type="text"
           name="name"
           id="name"
@@ -126,11 +126,11 @@ const Form = () => {
         />
       </div>
       <div className="flex flex-col w-full mt-4">
-        <label htmlFor="email" className="font-medium text-[#F7F5CF] ">
+        <label htmlFor="email" className="font-medium text-slate-800 ">
           Your Email Address
         </label>
         <input
-          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          className="rounded-md p-2 font-sans bg-primary text-slate-800 border border-slate-700"
           type="email"
           name="email"
           id="email"
@@ -139,11 +139,11 @@ const Form = () => {
         />
       </div>
       <div className="flex flex-col w-full mt-4 mb-8">
-        <label htmlFor="message" className="font-medium text-[#F7F5CF]">
+        <label htmlFor="message" className="font-medium text-slate-800">
           Your Message
         </label>
         <textarea
-          className="rounded-md p-2 font-sans bg-[#F9F3D3]"
+          className="rounded-md p-2 font-sans bg-primary text-slate-800 border border-slate-700"
           rows={5}
           type="text"
           name="message"
