@@ -1,11 +1,12 @@
-import React from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { toast } from "react-toastify";
-import Button from "./Button";
+'use client';
+import React from 'react';
+
+import { toast } from 'react-toastify';
+import Button from './Button';
 const Form = () => {
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
+  const [name, setName] = React.useState('');
   const [isSending, setIsSending] = React.useState(false);
   const [emailSent, setEmailSent] = React.useState(false);
 
@@ -19,7 +20,7 @@ const Form = () => {
     <div className="flex flex-col items-start">
       <p className="font-semibold mb-1">Sorry, Email Failed! 😔</p>
       <p>
-        Please, try again or DM me on{" "}
+        Please, try again or DM me on{' '}
         <a
           href="https://www.instagram.com/desi_web_things/"
           target="_blank"
@@ -33,27 +34,27 @@ const Form = () => {
   );
 
   const showToaster = (status) => {
-    if (status === "success") {
+    if (status === 'success') {
       return toast.success(<SuccessMsg />, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "dark",
+        theme: 'dark',
       });
     } else {
       return toast.error(<ErrorMsg />, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "dark",
+        theme: 'dark',
       });
     }
   };
@@ -61,11 +62,11 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
-    const res = await fetch("/api/sendEmail", {
-      method: "POST",
+    const res = await fetch('/api/sendEmail', {
+      method: 'POST',
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
@@ -75,15 +76,15 @@ const Form = () => {
     });
     const data = await res.json();
 
-    if (data.status === "Email Sent") {
+    if (data.status === 'Email Sent') {
       setEmailSent(true);
       setIsSending(false);
-      setEmail("");
-      setMessage("");
-      setName("");
-      showToaster("success");
+      setEmail('');
+      setMessage('');
+      setName('');
+      showToaster('success');
     } else {
-      showToaster("error");
+      showToaster('error');
       setEmailSent(false);
       setIsSending(false);
     }
@@ -92,15 +93,12 @@ const Form = () => {
   const renderButtonText = () => {
     if (isSending) {
       return (
-        <p className="flex flex-row items-center justify-center">
-          <AiOutlineLoading3Quarters className="animate-spin mr-4" />
-          Sending...
-        </p>
+        <p className="flex flex-row items-center justify-center">Sending...</p>
       );
     } else if (emailSent) {
-      return "Email Sent";
+      return 'Email Sent';
     } else {
-      return "Send";
+      return 'Send';
     }
   };
   const isDisabled = () => {
