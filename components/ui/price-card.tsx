@@ -22,7 +22,7 @@ export function PriceCard({ title, description, steps, footer }: CardData) {
           ))}
         </ul>
       </div>
-     <Button variant="outline" className="text-neutral-300 mt-4 relative z-20 text-sm">Select</Button>
+     {/* <Button variant="outline" className="text-neutral-300 mt-4 relative z-20 text-sm">Select</Button> */}
     </CardSpotlight>
   );
 }

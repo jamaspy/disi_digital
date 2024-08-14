@@ -8,6 +8,8 @@ import Image from "next/image";
 import { ServicesSection } from "@/components/ui/services";
 import { AboutSection } from "@/components/ui/about";
 import { PricingSection } from "@/components/ui/pricing";
+import { ContactSection } from "@/components/ui/contact";
+import { Footer } from "@/components/ui/footer";
 const Main = () => {
   return (
     <>
@@ -16,6 +18,8 @@ const Main = () => {
       <ServicesSection />
       <AboutSection />
       <PricingSection />
+      <ContactSection />
+      <Footer />
     </>
   );
 };

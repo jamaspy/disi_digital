@@ -21,7 +21,7 @@ export const PostsPage = async () => {
                   Something I wrote down for you.
                 </p>
                 <div className=" md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-4 w-full">
-                  {posts.map((post, index) => (
+                  {posts?.map((post, index) => (
                     <Link
                       className="p-4 rounded-xl shadow-md flex flex-col gap-2 hover:shadow-lg transition-all duration-200 ease-in-out bg-primary-100 hover:bg-primary-200 text-primary-900 hover:text-primary-900 mb-2 md:mb-0"
                       key={index}

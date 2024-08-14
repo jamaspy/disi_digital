@@ -40,7 +40,7 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
                   style={nord}
                   PreTag="div"
                 >
-                  {children}
+                  {children as string[]}
                 </SyntaxHighlighter>
               </div>
             ) : (
