@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const SaasPlatformCol = () => {
   return (
-    <div className="col-span-4 border-r flex-1 p-10">
+    <div className="col-span-4 border-r border-neutral-600 flex-1 p-10">
       <div className="flex flex-col lg:flex-row h-full">
         <div className="w-full lg:w-1/3">
           <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-neutral-200">

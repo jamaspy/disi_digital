@@ -10,11 +10,11 @@ const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
 export function FancyWorld() {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#062056",
+    globeColor: "#25272b",
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
     atmosphereAltitude: 0.1,
-    emissive: "#062056",
+    emissive: "#323131",
     emissiveIntensity: 0.1,
     shininess: 0.9,
     polygonColor: "rgba(255,255,255,0.7)",
@@ -28,7 +28,7 @@ export function FancyWorld() {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.9,
   };
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [

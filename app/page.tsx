@@ -7,6 +7,7 @@ import { HeroHeading } from "@/components/ui/hero";
 import Image from "next/image";
 import { ServicesSection } from "@/components/ui/services";
 import { AboutSection } from "@/components/ui/about";
+import { PricingSection } from "@/components/ui/pricing";
 const Main = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Main = () => {
       <HeroHeading />
       <ServicesSection />
       <AboutSection />
+      <PricingSection />
     </>
   );
 };

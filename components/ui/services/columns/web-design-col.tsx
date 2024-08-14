@@ -3,7 +3,7 @@ import { FancyCard } from "../../fancy-card";
 
 export const WebDesignCol = () => {
   return (
-    <div className="col-span-2  flex-1 border-t lg:border-t-0">
+    <div className="col-span-2 flex-1 border-neutral-600 border-t lg:border-t-0">
       <FancyCard
         title="Website Design"
         description="Cutting edge design and user experience for your website:"

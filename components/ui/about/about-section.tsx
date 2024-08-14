@@ -1,5 +1,5 @@
 import React from "react";
-import { ExpandableProjects } from "../expanding-projects";
+import { ExpandableProjects } from "./expanding-projects";
 import { EmploymentHistory } from "./employment-history";
 
 export const AboutSection = () => {

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const FullStackCol = () => {
   return (
-    <div className="col-span-3 border-r border-t flex-1 p-10">
+    <div className="col-span-3 border-r border-t border-neutral-600 flex-1 p-10">
       <div className="flex flex-row justify-between h-full">
         <div className="w-1/2 flex-1">
           <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-neutral-200">
