@@ -1,9 +1,10 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { nord, dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ReactMarkdown from 'react-markdown';
 import { getFiles, getPostBySlug } from '@/lib/posts';
 import { TiChevronLeft } from 'react-icons/ti';
+import { Button } from '@/components/ui/button';
 
 export async function generateStaticParams() {
   const posts = await getFiles('blog');
@@ -21,13 +22,13 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
         {frontMatter.title}
         <span className="text-highlight">.</span>
       </p>
-      <p className="font-light text-secondary-500 mt-4">
-        Published {frontMatter.date}
+      <p className="font-light text-neutral-300 text-xs my-4">
+        Published {frontMatter.date} by {frontMatter.author}
       </p>
-      <button>
+      <Button variant='outline' className='flex flex-row items-center gap-2'>
         <TiChevronLeft />
         Back
-      </button>
+      </Button>
       <ReactMarkdown
         components={{
           code({ node, className, children, ...props }) {
@@ -37,7 +38,7 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
                 <SyntaxHighlighter
                   showLineNumbers
                   language="js"
-                  style={nord}
+                  style={dracula}
                   PreTag="div"
                 >
                   {children as string[]}
@@ -81,10 +82,10 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
       >
         {markdownBody}
       </ReactMarkdown>
-      <button>
+      <Button variant='outline' className='flex flex-row items-center gap-2 mt-4'>
         <TiChevronLeft />
         Back
-      </button>
+      </Button>
     </article>
   );
 };

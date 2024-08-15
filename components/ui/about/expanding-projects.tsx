@@ -73,8 +73,8 @@ export function ExpandableProjects() {
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
-                  width={200}
-                  height={200}
+                  width={600}
+                  height={600}
                   src={active.src}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top mx-auto"
@@ -92,7 +92,7 @@ export function ExpandableProjects() {
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-neutral-600 dark:text-neutral-400 text-xs"
                     >
                       {active.description}
                     </motion.p>
@@ -113,7 +113,7 @@ export function ExpandableProjects() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -208,110 +208,133 @@ const cards = [
   {
     description: "Talent Intelligence Dashboards.",
     title: "Preacta",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/preacta.png",
     ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
-        </p>
+        <>
+          <p>
+            Preacta is a data driven Tech Recruitment company that offers Talent
+            Intelligence Dashboards to help companies make better hiring
+            decisions. We created a subscription based platform that allows
+            companies to access real-time data on the recruitment pipelines.
+          </p>
+          <p className='font-semibold'>Tech Stack</p>
+          <ul className="list-disc list-inside">
+            <li className='ml-2'>Typescript & NextJS</li>
+            <li className='ml-2'>TailwindCSS</li>
+            <li className='ml-2'>AWS EC2</li>
+            <li className='ml-2'>Azure Data Warehouse</li>
+            <li className='ml-2'>SQL Server</li>
+            <li className='ml-2'>Xata</li>
+            <li className='ml-2'>authJS</li>
+            <li className='ml-2'>Stripe</li>
+            <li className='ml-2'>Vercel</li>
+          </ul>
+        </>
       );
     },
   },
   {
     description: "Non-For-Profit Full Stack App.",
     title: "Georgies House",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    src: "/georgie.png",
     ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
+        <>
+          <p>
+            Georgies House is a newly formed charity that wanted to harness the power of technology to help teenagers on the Northern Beaches. We created secure platform where youngest can access resources, support, track their mood and journal. Furthermore we developed a bespoke self-hosted, bespoke CMS to manage events and knowledge base articles. 
+          </p>
+          <p className='font-semibold'>Tech Stack</p>
+          <ul className="list-disc list-inside">
+            <li className='ml-2'>Typescript & NextJS</li>
+            <li className='ml-2'>TailwindCSS</li>
+            <li className='ml-2'>Sanity</li>
+            <li className='ml-2'>Xata</li>
+            <li className='ml-2'>authJS</li>
+            <li className='ml-2'>Vercel</li>
+          </ul>
+        </>
       );
     },
   },
-
   {
     description: "Digital Sales Room.",
     title: "Stackshow",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
+    src: "/stackshow.jpg",
     ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
-        </p>
+        <>
+          <p>
+            Stackshow is a startup aiming to created a Digital Sales Room. We created a full stack application that allows users to generate digital collateral through a drag & drop interface and share it with their clients. The platform also allows users to track the engagement of their clients and manage their pipeline.  
+          </p>
+          <p className='font-semibold'>Tech Stack</p>
+          <ul className="list-disc list-inside">
+            <li className='ml-2'>Typescript & NextJS</li>
+            <li className='ml-2'>TailwindCSS</li>
+            <li className='ml-2'>Beautiful DnD</li>
+            <li className='ml-2'>React Table</li>
+            <li className='ml-2'>Xata</li>
+            <li className='ml-2'>Resend</li>
+            <li className='ml-2'>authJS</li>
+            <li className='ml-2'>Vercel</li>
+          </ul>
+        </>
       );
     },
   },
   {
-    description: "Subscription Spinning Classes Streaming.",
+    description: "Subscription Spin Class Streaming.",
     title: "RevelWell",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "/revel.png",
     ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
-        </p>
+        <>
+          <p>
+            RevelWell is a subscription based platform that offers streaming of spin classes & yoga. We created a platform that allows users to access live and on-demand spinning classes. The platform also allowed The RevelWell team to upload content and manage subscriptions. We achieve this by integrating with MUX for video streaming and Stripe for payments. 
+          </p>
+          <p className='font-semibold'>Tech Stack</p>
+          <ul className="list-disc list-inside">
+            <li className='ml-2'>GatsbyJS</li>
+            <li className='ml-2'>TailwindCSS</li>
+            <li className='ml-2'>MUX</li>
+            <li className='ml-2'>Stripe</li>
+            <li className='ml-2'>Contentful</li>
+            <li className='ml-2'>Resend</li>
+            <li className='ml-2'>authJS</li>
+            <li className='ml-2'>Vercel</li>
+          </ul>
+        </>
       );
     },
   },
   {
     description: "Digital Escape Room Experience.",
     title: "Escape Room",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "/escape.png",
     ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
-        </p>
+        <>
+          <p>
+            We created an Electron app that could be ran completely offline. The app was a digital escape room experience that allowed users to solve puzzles and escape the room. This involved multiple types of multi-media, animations and intricate styling. This was a fun project that allowed us to flex our creative muscles. 
+          </p>
+          <p className='font-semibold'>Tech Stack</p>
+          <ul className="list-disc list-inside">
+            <li className='ml-2'>NextJS</li>
+            <li className='ml-2'>TailwindCSS</li>
+            <li className='ml-2'>Sass CSS</li>
+            <li className='ml-2'>Electron</li>
+          </ul>
+        </>
       );
     },
   },
