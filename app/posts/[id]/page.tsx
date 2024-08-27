@@ -1,11 +1,11 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nord, dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import ReactMarkdown from "react-markdown";
 import { getFiles, getPostBySlug } from "@/lib/posts";
-import { TiChevronLeft } from "react-icons/ti";
-import { Button } from "@/components/ui/button";
 import { ArticleBackButton } from "@/components/ui/article-back-button";
+import Image from "next/image";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = await getFiles("blog");
@@ -15,14 +15,36 @@ export async function generateStaticParams() {
   }));
 }
 
+type Props = {
+  params: { id: string };
+
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const id = params.id;
+  const { frontMatter } = await getPostBySlug("blog", id);
+
+  return {
+    title: frontMatter.title,
+    description: frontMatter.excerpt,
+    openGraph: {
+      images: [frontMatter.image],
+    },
+  };
+}
+
 const PostPage = async ({ params }: { params: { id: string } }) => {
   const { frontMatter, markdownBody } = await getPostBySlug("blog", params.id);
   return (
     <article className="bg-gradient-to-br from-primary-100 to-primary min-h-screen pl-12 md:px-20 lg:pl-24 p-12">
-      <p className="font-black text-3xl">
+      <div className="h-72 relative rounded-t-xl overflow-hidden">
+      <Image src={frontMatter.image} alt="Post Image" fill className='object-cover object-center' />
+      </div>
+      <p className="font-black text-3xl mt-8">
         {frontMatter.title}
         <span className="text-highlight">.</span>
       </p>
+     
       <p className="font-light text-neutral-300 text-xs my-4">
         Published {frontMatter.date} by {frontMatter.author}
       </p>
