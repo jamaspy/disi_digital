@@ -1,21 +1,22 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nord, dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import ReactMarkdown from 'react-markdown';
-import { getFiles, getPostBySlug } from '@/lib/posts';
-import { TiChevronLeft } from 'react-icons/ti';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nord, dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import ReactMarkdown from "react-markdown";
+import { getFiles, getPostBySlug } from "@/lib/posts";
+import { TiChevronLeft } from "react-icons/ti";
+import { Button } from "@/components/ui/button";
+import { ArticleBackButton } from "@/components/ui/article-back-button";
 
 export async function generateStaticParams() {
-  const posts = await getFiles('blog');
+  const posts = await getFiles("blog");
 
   return posts.map((post) => ({
-    params: { id: post.replace(/\.md$/, '') },
+    params: { id: post.replace(/\.md$/, "") },
   }));
 }
 
 const PostPage = async ({ params }: { params: { id: string } }) => {
-  const { frontMatter, markdownBody } = await getPostBySlug('blog', params.id);
+  const { frontMatter, markdownBody } = await getPostBySlug("blog", params.id);
   return (
     <article className="bg-gradient-to-br from-primary-100 to-primary min-h-screen pl-12 md:px-20 lg:pl-24 p-12">
       <p className="font-black text-3xl">
@@ -25,14 +26,11 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
       <p className="font-light text-neutral-300 text-xs my-4">
         Published {frontMatter.date} by {frontMatter.author}
       </p>
-      <Button variant='outline' className='flex flex-row items-center gap-2'>
-        <TiChevronLeft />
-        Back
-      </Button>
+      <ArticleBackButton />
       <ReactMarkdown
         components={{
           code({ node, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '');
+            const match = /language-(\w+)/.exec(className || "");
             return match ? (
               <div className="my-8">
                 <SyntaxHighlighter
@@ -82,10 +80,7 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
       >
         {markdownBody}
       </ReactMarkdown>
-      <Button variant='outline' className='flex flex-row items-center gap-2 mt-4'>
-        <TiChevronLeft />
-        Back
-      </Button>
+      <ArticleBackButton />
     </article>
   );
 };

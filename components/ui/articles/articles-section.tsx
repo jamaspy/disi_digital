@@ -5,7 +5,7 @@ import { ArticleCard } from "../article-card";
 export const ArticlesSection = async () => {
   const posts = await getAllPostsWithFrontMatter("blog");
   return (
-    <section className='bg-zinc-950'>
+    <section id="articles" className='bg-zinc-950'>
       <h2 className="pl-10 pt-10 text-left text-xl md:text-4xl font-bold text-black dark:text-white">
         Articles
       </h2>
