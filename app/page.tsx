@@ -1,20 +1,22 @@
-import React from 'react';
-import {
-  HomePage,
-  AboutPage,
-  ExperiencePage,
-  ContactPage,
-} from '@/components/Pages';
-import Nav from '@/components/Nav';
+import React from "react";
+import { HeroHeading } from "@/components/ui/hero";
+import { ServicesSection } from "@/components/ui/services";
+import { AboutSection } from "@/components/ui/about";
+import { PricingSection } from "@/components/ui/pricing";
+import { ContactSection } from "@/components/ui/contact";
+import { Footer } from "@/components/ui/footer";
+import { ArticlesSection } from "@/components/ui/articles";
 const Main = () => {
   return (
-    <main className="flex flex-col">
-      <Nav />
-      <HomePage />
-      <AboutPage />
-      <ExperiencePage />
-      <ContactPage />
-    </main>
+    <>
+      <HeroHeading />
+      <ServicesSection />
+      <AboutSection />
+      <PricingSection />
+      <ArticlesSection />
+      <ContactSection />
+      <Footer />
+    </>
   );
 };
 
