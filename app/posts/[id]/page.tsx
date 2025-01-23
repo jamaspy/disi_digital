@@ -22,13 +22,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
   const { frontMatter } = await getPostBySlug("blog", id);
-  console.log("🚀 ~ generateMetadata ~ frontMatter:", frontMatter);
 
   return {
+    metadataBase: new URL("https://www.disi.au"),
     title: frontMatter.title,
     description: frontMatter.excerpt,
     openGraph: {
-      images: [frontMatter.image],
+      type: "article",
+      title: frontMatter.title,
+      description: frontMatter.excerpt,
+      images: [
+        {
+          url: frontMatter.image,
+          width: 1200,
+          height: 627,
+          alt: frontMatter.title,
+        },
+      ],
+      authors: frontMatter.author,
+      publishedTime: new Date(frontMatter.date).toISOString(),
     },
     keywords: frontMatter.tags,
   };
