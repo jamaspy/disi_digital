@@ -4,7 +4,7 @@ author: 'James Aspinall'
 minutes: 5
 date: '27th Aug 2024'
 excerpt: 'What is happening in FE trends in Australia 2024'
-avatar: 'me.jpeg'
+avatar: '/me.jpeg'
 image: 'https://images.unsplash.com/photo-1510987836583-e3fb9586c7b3?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 tags:
   - jobs

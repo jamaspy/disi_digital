@@ -25,7 +25,7 @@ export const FullStackCol = () => {
             </ul>
           </div>
         </div>
-        <div className="w-1/2 ml-2 relative rounded-md overflow-hidden lg:inline-block hidden">
+        <div className="w-1/2 ml-2 relative rounded-md overflow-hidden xl:inline-block hidden">
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-opacity-5 dark:dark:bg-zinc-950  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-10" />
           <Image src="/georgie.png" fill alt="saas" />
         </div>

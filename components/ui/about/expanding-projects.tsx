@@ -208,9 +208,9 @@ const cards = [
   {
     description: "Talent Intelligence Dashboards.",
     title: "Preacta",
-    src: "/preacta.png",
+    src: "/preacta2.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://dash-preacta.vercel.app",
     content: () => {
       return (
         <>
@@ -220,17 +220,17 @@ const cards = [
             decisions. We created a subscription based platform that allows
             companies to access real-time data on the recruitment pipelines.
           </p>
-          <p className='font-semibold'>Tech Stack</p>
+          <p className="font-semibold">Tech Stack</p>
           <ul className="list-disc list-inside">
-            <li className='ml-2'>Typescript & NextJS</li>
-            <li className='ml-2'>TailwindCSS</li>
-            <li className='ml-2'>AWS EC2</li>
-            <li className='ml-2'>Azure Data Warehouse</li>
-            <li className='ml-2'>SQL Server</li>
-            <li className='ml-2'>Xata</li>
-            <li className='ml-2'>authJS</li>
-            <li className='ml-2'>Stripe</li>
-            <li className='ml-2'>Vercel</li>
+            <li className="ml-2">Typescript & NextJS</li>
+            <li className="ml-2">TailwindCSS</li>
+            <li className="ml-2">AWS EC2</li>
+            <li className="ml-2">Azure Data Warehouse</li>
+            <li className="ml-2">SQL Server</li>
+            <li className="ml-2">Xata</li>
+            <li className="ml-2">authJS</li>
+            <li className="ml-2">Stripe</li>
+            <li className="ml-2">Vercel</li>
           </ul>
         </>
       );
@@ -241,21 +241,26 @@ const cards = [
     title: "Georgies House",
     src: "/georgie.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://www.georgieshouse.org.au/",
     content: () => {
       return (
         <>
           <p>
-            Georgies House is a newly formed charity that wanted to harness the power of technology to help teenagers on the Northern Beaches. We created secure platform where youngest can access resources, support, track their mood and journal. Furthermore we developed a bespoke self-hosted, bespoke CMS to manage events and knowledge base articles. 
+            Georgies House is a newly formed charity that wanted to harness the
+            power of technology to help teenagers on the Northern Beaches. We
+            created secure platform where youngest can access resources,
+            support, track their mood and journal. Furthermore we developed a
+            bespoke self-hosted, bespoke CMS to manage events and knowledge base
+            articles.
           </p>
-          <p className='font-semibold'>Tech Stack</p>
+          <p className="font-semibold">Tech Stack</p>
           <ul className="list-disc list-inside">
-            <li className='ml-2'>Typescript & NextJS</li>
-            <li className='ml-2'>TailwindCSS</li>
-            <li className='ml-2'>Sanity</li>
-            <li className='ml-2'>Xata</li>
-            <li className='ml-2'>authJS</li>
-            <li className='ml-2'>Vercel</li>
+            <li className="ml-2">Typescript & NextJS</li>
+            <li className="ml-2">TailwindCSS</li>
+            <li className="ml-2">Sanity</li>
+            <li className="ml-2">Xata</li>
+            <li className="ml-2">authJS</li>
+            <li className="ml-2">Vercel</li>
           </ul>
         </>
       );
@@ -266,23 +271,27 @@ const cards = [
     title: "Stackshow",
     src: "/stackshow.jpg",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://stackshow.io/",
     content: () => {
       return (
         <>
           <p>
-            Stackshow is a startup aiming to created a Digital Sales Room. We created a full stack application that allows users to generate digital collateral through a drag & drop interface and share it with their clients. The platform also allows users to track the engagement of their clients and manage their pipeline.  
+            Stackshow is a startup aiming to created a Digital Sales Room. We
+            created a full stack application that allows users to generate
+            digital collateral through a drag & drop interface and share it with
+            their clients. The platform also allows users to track the
+            engagement of their clients and manage their pipeline.
           </p>
-          <p className='font-semibold'>Tech Stack</p>
+          <p className="font-semibold">Tech Stack</p>
           <ul className="list-disc list-inside">
-            <li className='ml-2'>Typescript & NextJS</li>
-            <li className='ml-2'>TailwindCSS</li>
-            <li className='ml-2'>Beautiful DnD</li>
-            <li className='ml-2'>React Table</li>
-            <li className='ml-2'>Xata</li>
-            <li className='ml-2'>Resend</li>
-            <li className='ml-2'>authJS</li>
-            <li className='ml-2'>Vercel</li>
+            <li className="ml-2">Typescript & NextJS</li>
+            <li className="ml-2">TailwindCSS</li>
+            <li className="ml-2">Beautiful DnD</li>
+            <li className="ml-2">React Table</li>
+            <li className="ml-2">Xata</li>
+            <li className="ml-2">Resend</li>
+            <li className="ml-2">authJS</li>
+            <li className="ml-2">Vercel</li>
           </ul>
         </>
       );
@@ -298,18 +307,23 @@ const cards = [
       return (
         <>
           <p>
-            RevelWell is a subscription based platform that offers streaming of spin classes & yoga. We created a platform that allows users to access live and on-demand spinning classes. The platform also allowed The RevelWell team to upload content and manage subscriptions. We achieve this by integrating with MUX for video streaming and Stripe for payments. 
+            RevelWell is a subscription based platform that offers streaming of
+            spin classes & yoga. We created a platform that allows users to
+            access live and on-demand spinning classes. The platform also
+            allowed The RevelWell team to upload content and manage
+            subscriptions. We achieve this by integrating with MUX for video
+            streaming and Stripe for payments.
           </p>
-          <p className='font-semibold'>Tech Stack</p>
+          <p className="font-semibold">Tech Stack</p>
           <ul className="list-disc list-inside">
-            <li className='ml-2'>GatsbyJS</li>
-            <li className='ml-2'>TailwindCSS</li>
-            <li className='ml-2'>MUX</li>
-            <li className='ml-2'>Stripe</li>
-            <li className='ml-2'>Contentful</li>
-            <li className='ml-2'>Resend</li>
-            <li className='ml-2'>authJS</li>
-            <li className='ml-2'>Vercel</li>
+            <li className="ml-2">GatsbyJS</li>
+            <li className="ml-2">TailwindCSS</li>
+            <li className="ml-2">MUX</li>
+            <li className="ml-2">Stripe</li>
+            <li className="ml-2">Contentful</li>
+            <li className="ml-2">Resend</li>
+            <li className="ml-2">authJS</li>
+            <li className="ml-2">Vercel</li>
           </ul>
         </>
       );
@@ -325,14 +339,18 @@ const cards = [
       return (
         <>
           <p>
-            We created an Electron app that could be ran completely offline. The app was a digital escape room experience that allowed users to solve puzzles and escape the room. This involved multiple types of multi-media, animations and intricate styling. This was a fun project that allowed us to flex our creative muscles. 
+            We created an Electron app that could be ran completely offline. The
+            app was a digital escape room experience that allowed users to solve
+            puzzles and escape the room. This involved multiple types of
+            multi-media, animations and intricate styling. This was a fun
+            project that allowed us to flex our creative muscles.
           </p>
-          <p className='font-semibold'>Tech Stack</p>
+          <p className="font-semibold">Tech Stack</p>
           <ul className="list-disc list-inside">
-            <li className='ml-2'>NextJS</li>
-            <li className='ml-2'>TailwindCSS</li>
-            <li className='ml-2'>Sass CSS</li>
-            <li className='ml-2'>Electron</li>
+            <li className="ml-2">NextJS</li>
+            <li className="ml-2">TailwindCSS</li>
+            <li className="ml-2">Sass CSS</li>
+            <li className="ml-2">Electron</li>
           </ul>
         </>
       );

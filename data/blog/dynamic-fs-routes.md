@@ -4,7 +4,7 @@ author: 'James Aspinall'
 minutes: 5
 date: '19th Sep 2022'
 excerpt: 'Setting up dynamic routes using fs and markdown'
-avatar: 'me.jpeg'
+avatar: '/me.jpeg'
 image: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80'
 tags:
   - nextJS

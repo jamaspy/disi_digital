@@ -17,12 +17,12 @@ export async function generateStaticParams() {
 
 type Props = {
   params: { id: string };
-
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
   const { frontMatter } = await getPostBySlug("blog", id);
+  console.log("🚀 ~ generateMetadata ~ frontMatter:", frontMatter);
 
   return {
     title: frontMatter.title,
@@ -30,24 +30,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       images: [frontMatter.image],
     },
+    keywords: frontMatter.tags,
   };
 }
 
 const PostPage = async ({ params }: { params: { id: string } }) => {
   const { frontMatter, markdownBody } = await getPostBySlug("blog", params.id);
   return (
-    <article className="bg-gradient-to-br from-primary-100 to-primary min-h-screen pl-12 md:px-20 lg:pl-24 p-12">
+    <article className="container bg-gradient-to-br from-primary-100 to-primary min-h-screen pl-12 md:px-20 lg:pl-24 p-12">
       <div className="h-72 relative rounded-t-xl overflow-hidden">
-      <Image src={frontMatter.image} alt="Post Image" fill className='object-cover object-center' />
+        <Image
+          src={frontMatter.image}
+          alt="Post Image"
+          fill
+          className="object-cover object-center"
+        />
       </div>
       <p className="font-black text-3xl mt-8">
         {frontMatter.title}
         <span className="text-highlight">.</span>
       </p>
-     
-      <p className="font-light text-neutral-300 text-xs my-4">
-        Published {frontMatter.date} by {frontMatter.author}
-      </p>
+
+      <div className="flex flex-row gap-2 items-center mt-2">
+        <Image
+          src={frontMatter.avatar}
+          alt="Author Image"
+          width={40}
+          height={40}
+          className="rounded-full w-10 h-10"
+        />
+        <p className="font-light text-neutral-300 text-xs my-4">
+          Published {frontMatter.date} by {frontMatter.author}
+        </p>
+      </div>
       <ArticleBackButton />
       <ReactMarkdown
         components={{
@@ -77,6 +92,13 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
               </p>
             );
           },
+          a({ node, children, ...props }) {
+            return (
+              <a className="text-pink-500 hover:underline" {...props}>
+                {children}
+              </a>
+            );
+          },
           h2({ node, children, ...props }) {
             return (
               <h2 className="text-2xl font-bold mt-8" {...props}>
@@ -102,6 +124,17 @@ const PostPage = async ({ params }: { params: { id: string } }) => {
       >
         {markdownBody}
       </ReactMarkdown>
+      <div className="my-4 flex flex-wrap flex-row gap-2">
+        {frontMatter.tags.length > 0 &&
+          frontMatter.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs bg-neutral-800 text-neutral-200 px-2 py-1 rounded-md"
+            >
+              #{tag}
+            </span>
+          ))}
+      </div>
       <ArticleBackButton />
     </article>
   );

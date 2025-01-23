@@ -42,7 +42,7 @@ const PostsPage = async () => {
                     height="100"
                     width="100"
                     alt="Avatar"
-                    src={`/${frontMatter.avatar}`}
+                    src={`${frontMatter.avatar}`}
                     className="h-10 w-10 rounded-full border-2 object-cover"
                   />
                   <div className="flex flex-col">
@@ -58,8 +58,8 @@ const PostsPage = async () => {
                   <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
                     {frontMatter.title}
                   </h1>
-                  <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
-                    {frontMatter.description}
+                  <p className="font-semibold text-sm text-gray-50 relative z-10 my-4">
+                    {frontMatter.excerpt}
                   </p>
                 </div>
               </div>

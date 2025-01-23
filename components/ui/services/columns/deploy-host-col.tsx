@@ -15,7 +15,7 @@ export const DeployHostCol = () => {
           <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-white">
             Deployment & Hosting
           </h2>
-          <p className="text-left text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2">
+          <p className="text-left text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 xl:block hidden">
             Ultra-fast, always secure global application delivery.
           </p>
         </div>
