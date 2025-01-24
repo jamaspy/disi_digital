@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
       authors: frontMatter.author,
-      publishedTime: new Date(frontMatter.date).toISOString(),
+      publishedTime: frontMatter.date,
     },
     keywords: frontMatter.tags,
   };
