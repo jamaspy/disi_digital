@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/lib/dark-mode-theme-provider";
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <body>{children}</body>
         <Analytics />
+        <SpeedInsights />
       </ThemeProvider>
     </html>
   );
