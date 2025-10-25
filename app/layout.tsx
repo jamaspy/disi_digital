@@ -1,10 +1,10 @@
-import React from "react";
-import { Metadata } from "next";
+import { ThemeProvider } from "@/lib/dark-mode-theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./globals.css";
+import { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { ThemeProvider } from "@/lib/dark-mode-theme-provider";
+import React from "react";
+import "./globals.css";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Poppins({
@@ -28,7 +28,7 @@ export default function RootLayout({
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
-        enableSystem
+        enableSystem={false}
         disableTransitionOnChange
       >
         <body>{children}</body>

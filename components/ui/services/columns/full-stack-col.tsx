@@ -1,19 +1,18 @@
-import React from "react";
-import { Step } from "../../fancy-card";
 import Image from "next/image";
+import { Step } from "../../fancy-card";
 
 export const FullStackCol = () => {
   return (
     <div className="col-span-3 border-r border-t border-neutral-600 flex-1 p-10">
       <div className="flex flex-row justify-between h-full">
         <div className="w-1/2 flex-1">
-          <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-neutral-200">
+          <h2 className="text-left text-xl md:text-4xl font-bold dark:text-neutral-200 text-neutral-900">
             Full Stack Web Apps
           </h2>
-          <div className="text-neutral-200 mt-4 relative z-20">
+          <div className="dark:text-neutral-200 text-neutral-900 mt-4 relative z-20">
             Full stack web applications with endless functionality using the
             latest technologies:
-            <ul className="list-none  mt-2">
+            <ul className="list-none dark:text-neutral-200 text-neutral-900 mt-2">
               <Step title="Headless CMS" />
               <Step title="eCommerce Cart" />
               <Step title="Blog & Messaging Service" />

@@ -1,13 +1,13 @@
 "use client";
 
-import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import React, { MouseEvent as ReactMouseEvent, useState } from "react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { cn } from "@/lib/utils";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import React, { MouseEvent as ReactMouseEvent, useState } from "react";
 
 export const CardSpotlight = ({
   children,
-  radius = 350,
+  radius = 400,
   color = "#262626",
   className,
   ...props

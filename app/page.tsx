@@ -1,11 +1,10 @@
-import React from "react";
-import { HeroHeading } from "@/components/ui/hero";
-import { ServicesSection } from "@/components/ui/services";
 import { AboutSection } from "@/components/ui/about";
-import { PricingSection } from "@/components/ui/pricing";
+import { ArticlesSection } from "@/components/ui/articles";
 import { ContactSection } from "@/components/ui/contact";
 import { Footer } from "@/components/ui/footer";
-import { ArticlesSection } from "@/components/ui/articles";
+import { HeroHeading } from "@/components/ui/hero";
+import { PricingSection } from "@/components/ui/pricing";
+import { ServicesSection } from "@/components/ui/services";
 const Main = () => {
   return (
     <>
