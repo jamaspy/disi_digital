@@ -1,4 +1,3 @@
-import React from "react";
 import { PriceCard } from "../price-card";
 
 export const PricingSection = () => {
@@ -11,7 +10,7 @@ export const PricingSection = () => {
         <div className="border rounded-lg overflow-hidden border-neutral-700">
           <PriceCard
             title="Hourly Rate"
-            description="$120AUD per hour"
+            description="$200AUD per hour"
             steps={[
               "Minimum 3 Hour Charge",
               "Daily/Weekly Running Cost Updates",
