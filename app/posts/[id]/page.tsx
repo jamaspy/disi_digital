@@ -1,11 +1,10 @@
-import React from "react";
+import { ArticleBackButton } from "@/components/ui/article-back-button";
+import { getFiles, getPostBySlug } from "@/lib/posts";
+import { Metadata } from "next";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import ReactMarkdown from "react-markdown";
-import { getFiles, getPostBySlug } from "@/lib/posts";
-import { ArticleBackButton } from "@/components/ui/article-back-button";
-import Image from "next/image";
-import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = await getFiles("blog");
@@ -27,10 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL("https://www.disi.au"),
     title: frontMatter.title,
     description: frontMatter.excerpt,
+    authors: [{ name: frontMatter.author }],
     openGraph: {
       type: "article",
       title: frontMatter.title,
       description: frontMatter.excerpt,
+      url: `https://www.disi.au/posts/${id}`,
+      siteName: "disi digital",
       images: [
         {
           url: frontMatter.image,
@@ -41,15 +43,61 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
       authors: frontMatter.author,
       publishedTime: frontMatter.date,
+      modifiedTime: frontMatter.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: frontMatter.title,
+      description: frontMatter.excerpt,
+      images: [frontMatter.image],
+      creator: "@disidigital",
     },
     keywords: frontMatter.tags,
+    alternates: {
+      canonical: `https://www.disi.au/posts/${id}`,
+    },
   };
 }
 
 const PostPage = async ({ params }: { params: { id: string } }) => {
   const { frontMatter, markdownBody } = await getPostBySlug("blog", params.id);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: frontMatter.title,
+    description: frontMatter.excerpt,
+    image: frontMatter.image,
+    datePublished: frontMatter.date,
+    dateModified: frontMatter.date,
+    author: {
+      "@type": "Person",
+      name: frontMatter.author,
+      image: frontMatter.avatar,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "disi digital",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.disi.au/disi_logo_trans.png",
+      },
+    },
+    keywords: frontMatter.tags.join(", "),
+    articleSection: "Technology",
+    inLanguage: "en-AU",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.disi.au/posts/${params.id}`,
+    },
+  };
+
   return (
     <article className="container bg-gradient-to-br from-primary-100 to-primary min-h-screen pl-12 md:px-20 lg:pl-24 p-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="h-72 relative rounded-t-xl overflow-hidden">
         <Image
           src={frontMatter.image}
