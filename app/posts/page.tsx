@@ -1,11 +1,25 @@
-import { ArticleCard } from "@/components/ui/article-card";
-import { getAllPostsWithFrontMatter } from "@/lib/posts";
-import React from "react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import image from "next/image";
-import Link from "next/link";
 import { HomeButton } from "@/components/ui/home-button";
+import { getAllPostsWithFrontMatter } from "@/lib/posts";
+import { cn } from "@/lib/utils";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Blog & Articles",
+  description:
+    "Read the latest articles about web development, SaaS, and technology trends from disi digital.",
+  openGraph: {
+    title: "Blog & Articles | disi digital",
+    description:
+      "Read the latest articles about web development, SaaS, and technology trends from disi digital.",
+    url: "https://www.disi.au/posts",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.disi.au/posts",
+  },
+};
 
 const PostsPage = async () => {
   const posts = await getAllPostsWithFrontMatter("blog");

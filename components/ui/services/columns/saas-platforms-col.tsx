@@ -1,6 +1,5 @@
-import React from "react";
-import { Step } from "../../fancy-card";
 import Image from "next/image";
+import { Step } from "../../fancy-card";
 
 export const SaasPlatformCol = () => {
   return (
@@ -10,9 +9,9 @@ export const SaasPlatformCol = () => {
           <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-neutral-200">
             SaaS Platforms
           </h2>
-          <div className="text-neutral-200 mt-4 relative z-20">
+          <div className="dark:text-neutral-200 text-neutral-900 mt-4 relative z-20">
             Specialists in subscription based SaaS platforms:
-            <ul className="list-none  mt-2">
+            <ul className="list-none dark:text-neutral-200 text-neutral-900 mt-2">
               <Step title="Serverless Databases" />
               <Step title="Interactive Dashboards" />
               <Step title="Subscription Management" />

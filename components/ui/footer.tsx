@@ -1,8 +1,11 @@
-import React from "react";
-import { TiSocialLinkedin, TiSocialInstagram, TiSocialGithub } from "react-icons/ti";
+import {
+  TiSocialGithub,
+  TiSocialInstagram,
+  TiSocialLinkedin,
+} from "react-icons/ti";
 export const Footer = () => {
   return (
-    <footer className="w-full p-12 flex bg-zinc-950 dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative">
+    <footer className="w-full p-12 flex dark:bg-zinc-950 bg-neutral-100 relative">
       <div className="flex flex-row gap-4 w-full items-center justify-center">
         <TiSocialGithub className="text-4xl text-zinc-950 dark:text-neutral-200 dark:hover:text-pink-600" />
         <TiSocialLinkedin className="text-4xl text-zinc-950 dark:text-neutral-200 dark:hover:text-pink-600" />

@@ -1,5 +1,4 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { Button } from "./button";
 
 interface CardData {
   title: string;
@@ -10,19 +9,19 @@ interface CardData {
 
 export function PriceCard({ title, description, steps, footer }: CardData) {
   return (
-    <CardSpotlight className="h-full w-full bg-opacity-10 cursor-pointer">
-      <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-neutral-200">
+    <CardSpotlight className="h-full w-full bg-opacity-0 cursor-pointer border-none dark:border-none">
+      <h2 className="text-left text-xl md:text-4xl font-bold dark:text-neutral-200 text-neutral-900">
         {title}
       </h2>
-      <div className="text-neutral-200 mt-4 relative z-20">
+      <div className="dark:text-neutral-200 text-neutral-900 mt-4 relative z-20">
         {description}
-        <ul className="list-none  mt-2">
+        <ul className="list-none dark:text-neutral-200 text-neutral-900 mt-2">
           {steps.map((step, index) => (
             <Step key={step + index} title={step} />
           ))}
         </ul>
       </div>
-     {/* <Button variant="outline" className="text-neutral-300 mt-4 relative z-20 text-sm">Select</Button> */}
+      {/* <Button variant="outline" className="text-neutral-300 mt-4 relative z-20 text-sm">Select</Button> */}
     </CardSpotlight>
   );
 }
@@ -31,7 +30,7 @@ export const Step = ({ title }: { title: string }) => {
   return (
     <li className="flex gap-2 items-start">
       <CheckIcon />
-      <p className="text-white">{title}</p>
+      <p className="dark:text-neutral-200 text-neutral-900">{title}</p>
     </li>
   );
 };

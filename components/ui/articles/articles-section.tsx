@@ -1,8 +1,7 @@
 import { getAllPostsWithFrontMatter } from "@/lib/posts";
-import React from "react";
-import { ArticleCard } from "../article-card";
-import Link from "next/link";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { ArticleCard } from "../article-card";
 
 export const ArticlesSection = async () => {
   const posts = await getAllPostsWithFrontMatter("blog");
@@ -10,8 +9,8 @@ export const ArticlesSection = async () => {
   const firstFourPosts = posts.slice(0, 4);
 
   return (
-    <section id="articles" className="bg-zinc-950">
-      <h2 className="pl-10 pt-10 text-left text-xl md:text-4xl font-bold text-black dark:text-white">
+    <section id="articles" className="dark:bg-zinc-950 bg-neutral-100">
+      <h2 className="pl-10 pt-10 text-left text-xl md:text-4xl font-bold dark:text-neutral-200 text-neutral-900">
         Articles
       </h2>
 
@@ -35,7 +34,7 @@ export const ArticlesSection = async () => {
       <Link href="/posts">
         <p className="pl-4 md:pl-10 hover:text-pink-600 inline-block">
           See all articles
-          <ChevronRightIcon className='inline ml-1' />
+          <ChevronRightIcon className="inline ml-1" />
         </p>
       </Link>
     </section>

@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React from "react";
-import { AuroraBackground } from "./aurora-background";
-import { Button } from "./button";
 import { LuChevronDownCircle } from "react-icons/lu";
+import { AuroraBackground } from "./aurora-background";
 
 export const HeroHeading = () => {
   return (
@@ -19,10 +17,10 @@ export const HeroHeading = () => {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4 h-full"
       >
-        <p className="text-5xl md:text-7xl font-bold dark:text-neutral-200 text-center">
+        <p className="text-5xl md:text-7xl font-bold dark:text-neutral-200 text-neutral-900 text-center">
           disi digital.
         </p>
-        <p className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+        <p className="font-extralight text-base md:text-4xl dark:text-neutral-200 text-neutral-900 py-4">
           web app & website creators
         </p>
         <a href="#services">
