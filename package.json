@@ -36,6 +36,7 @@
     "react-toastify": "^9.1.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "resend": "^6.6.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.167.1",
