@@ -1,14 +1,14 @@
 ---
-title: 'Generate Route with fs and markdown'
-author: 'James Aspinall'
+title: "Generate Route with fs and markdown"
+author: "James Aspinall"
 minutes: 5
-date: '19th Sep 2022'
-excerpt: 'Setting up dynamic routes using fs and markdown'
-avatar: '/me.jpeg'
-image: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80'
+date: "19th Sep 2022"
+excerpt: "Setting up dynamic routes using fs and markdown"
+avatar: "/me.jpeg"
+image: "https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80"
 tags:
   - nextJS
-  - getStaicProps
+  - getStaticProps
   - getStaticPaths
   - routes
   - markdown
@@ -36,7 +36,7 @@ export async function getStaticPaths() {
       return files.map((file) => ({
         params: {
           area: area,
-          page: file.replace('.md', ''),
+          page: file.replace(".md", ""),
         },
       }));
     })
@@ -55,7 +55,7 @@ export async function getStaticProps({ params }) {
   const { area, page } = params;
   const markdownWithMeta = fs.readFileSync(
     `${process.cwd()}/contents/${area}/${page}.md`,
-    'utf-8'
+    "utf-8"
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
   return {
